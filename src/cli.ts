@@ -3,7 +3,7 @@ import { Logger } from './util/logger'
 import { check } from './check'
 import { parseOptions } from './parse-option'
 import { findProjectRoot } from './find-project-root'
-import { LockFileError } from './error'
+import chalk from 'chalk'
 
 const cli = async () => {
     try {
@@ -12,7 +12,11 @@ const cli = async () => {
 
         const lockfile = await readWantedLockfile(projectRoot, { ignoreIncompatible: false })
         if (!lockfile) {
-            Logger.error(new LockFileError())
+            Logger.message(
+                `Cannot find ${chalk.blueBright('pnpm-lock.yaml')}, try to run ${chalk.blueBright(
+                    '$ pnpm install'
+                )} first`
+            )
             return
         }
         check(lockfile, options, Logger)
