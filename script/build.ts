@@ -14,7 +14,7 @@ const spawnOptions: SpawnSyncOptionsWithStringEncoding = {
     stdio: 'inherit'
 }
 
-export const buildProcess = async () => {
+export const build = async () => {
     await fs.emptyDir(outputPath)
     console.log('> Clean output path')
 
@@ -27,3 +27,5 @@ export const buildProcess = async () => {
     await fs.copy(packageJSONFilePath, path.join(outputPath, 'package.json'))
     console.log('> Copied package.json')
 }
+
+build()
