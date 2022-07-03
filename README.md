@@ -1,7 +1,5 @@
 # pnpm single version
 
---- 
-
 Enforce Single version of dependencies on pnpm workspace.
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -16,7 +14,7 @@ pnpm add -D pnpm-single-version
 
 Add following options to `package.json` in project root
 
-```json
+```json5
 "pnpmSingleVersion": {
     "include": [
         // Place all the single version dependencies here
@@ -28,7 +26,7 @@ Add following options to `package.json` in project root
 
 ### Maunal Checking using CLI
 
-then call `pnpm-single-version` in Terminal
+You can `pnpm-single-version` in Terminal
 
 ```bash
 pnpm pnpm-single-version
@@ -57,5 +55,3 @@ pnpm provide a way to hook directly into installation process using `.pnpmfile.c
    So now when you call `pnpm install` and `pnpm update`, checking is going to be involved automatically only when you have dependenices changes.
 
 More about `.pnpmfile.cjs` at https://pnpm.io/pnpmfile
-
-# 
