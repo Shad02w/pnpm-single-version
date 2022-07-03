@@ -2,7 +2,8 @@
     "name": "pnpm-single-version",
     "version": "0.1.0-beta0",
     "description": "Ensure single version dependencies of pnpm workspace",
-    "main": "index.js",
+    "main": "./index.js",
+    "types": "./index.d.ts",
     "bin": {
         "pnpm-single-version": "./bin.js"
     },
@@ -10,9 +11,20 @@
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
         "test": "pnpm run --silent run-script ./script/test.ts",
-        "prepublish": "pnpm run --silent run-script ./script/publish.ts"
+        "prepublish": "pnpm run --silent run-script ./script/publish.ts",
+        "cz": "cz"
     },
-    "keywords": [],
+    "keywords": [
+        "pnpm",
+        "single version",
+        "one version",
+        "pnpmfile",
+        "package",
+        "packages",
+        "workspace",
+        "workspaces",
+        "monorepo"
+    ],
     "author": "Alvis Tse",
     "license": "ISC",
     "dependencies": {
@@ -29,9 +41,17 @@
         "@swc/core": "1.2.208",
         "@types/fs-extra": "9.0.13",
         "@types/node": "18.0.0",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "standard-version": "9.5.0",
         "fs-extra": "10.1.0",
         "prettier": "2.7.1",
         "ts-node": "10.8.1",
         "typescript": "4.7.4"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
     }
 }
