@@ -13,8 +13,9 @@
     "scripts": {
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
+        "release": "pnpm standard-version",
         "test": "pnpm run --silent run-script ./script/test.ts",
-        "prepublish": "pnpm run --silent run-script ./script/prepublish.ts",
+        "prepublish": "pnpm run --silent run-script ./script/build.ts",
         "cz": "cz"
     },
     "keywords": [
