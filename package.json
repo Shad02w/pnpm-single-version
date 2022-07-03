@@ -4,6 +4,9 @@
     "description": "Ensure single version dependencies of pnpm workspace",
     "main": "./index.js",
     "types": "./index.d.ts",
+    "publishConfig": {
+        "directory": "dist"
+    },
     "bin": {
         "pnpm-single-version": "./bin.js"
     },
@@ -11,7 +14,7 @@
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
         "test": "pnpm run --silent run-script ./script/test.ts",
-        "prepublish": "pnpm run --silent run-script ./script/publish.ts",
+        "prepublish": "pnpm run --silent run-script ./script/prepublish.ts",
         "cz": "cz"
     },
     "keywords": [
