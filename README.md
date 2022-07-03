@@ -4,6 +4,8 @@
 
 Enforce Single version of dependencies on pnpm workspace.
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Installation
 
 ```bash
@@ -51,7 +53,9 @@ pnpm provide a way to hook directly into installation process using `.pnpmfile.c
        }
    }
    ```
-
- So now when you call `pnpm install` and `pnpm update`, checking is going to be involved automatically only when you have dependenices changes.
+   
+   So now when you call `pnpm install` and `pnpm update`, checking is going to be involved automatically only when you have dependenices changes.
 
 More about `.pnpmfile.cjs` at https://pnpm.io/pnpmfile
+
+# 
