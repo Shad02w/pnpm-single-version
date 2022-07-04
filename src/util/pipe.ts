@@ -1,6 +1,6 @@
 type OperationFunction<P, R> = (value: P) => R
 
-export function pipe<P, A>(op1: OperationFunction<P, A>): (initial?: P) => A
+export function pipe<P, A>(op1: OperationFunction<P, A>): (initial: P) => A
 export function pipe<P, A, B>(op1: OperationFunction<P, A>, op2: OperationFunction<A, B>): (initial?: P) => B
 export function pipe<P, A, B, C>(
     op1: OperationFunction<P, A>,
@@ -37,6 +37,7 @@ export function pipe<P, A, B, C, D, E, F, G>(
     op6: OperationFunction<E, F>,
     op7: OperationFunction<F, G>
 ): (initial?: P) => G
+export function pipe(...ops: Array<OperationFunction<any, any>>): (initial?: any) => any
 export function pipe(...fns: any[]) {
     return (initial: any) => fns.reduce((p, f) => f(p), initial)
 }
