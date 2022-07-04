@@ -5,6 +5,7 @@ import path from 'path'
 const outputPath = path.join(__dirname, '../dist')
 const packageJSONFilePath = path.join(__dirname, '../package.json')
 const readMeFilePath = path.join(__dirname, '../README.md')
+const licenseFilePath = path.join(__dirname, '../LICENSE')
 const sourceFilePath = path.join(__dirname, '../src')
 const swcConfigFilePath = path.join(__dirname, '../config/.swcrc')
 const tsconfigFilePath = path.join(__dirname, '../config/tsconfig.src.json')
@@ -30,6 +31,9 @@ export const build = async () => {
 
     await fs.copy(readMeFilePath, path.join(outputPath, 'README.md'))
     console.log('> Copied README.md')
+
+    await fs.copy(licenseFilePath, path.join(outputPath, 'LICENSE'))
+    console.log('> Copied LICENSE')
 }
 
 build()
