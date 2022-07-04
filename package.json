@@ -13,10 +13,10 @@
     "scripts": {
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
+        "prepublish": "pnpm run --silent run-script ./script/build.ts",
         "release": "standard-version",
         "test": "jest -c ./config/jest.config.ts",
-        "prepublish": "pnpm run --silent run-script ./script/build.ts",
-        "cz": "cz"
+        "prepare": "husky install"
     },
     "keywords": [
         "pnpm",
@@ -41,6 +41,8 @@
         "find-up": "5.0.0"
     },
     "devDependencies": {
+        "@commitlint/cli": "17.0.3",
+        "@commitlint/config-conventional": "17.0.3",
         "@jest/types": "28.1.1",
         "@swc/cli": "0.1.57",
         "@swc/core": "1.2.208",
@@ -50,6 +52,7 @@
         "commitizen": "^4.2.4",
         "cz-conventional-changelog": "^3.3.0",
         "fs-extra": "10.1.0",
+        "husky": "^8.0.0",
         "jest": "28.1.2",
         "prettier": "2.7.1",
         "standard-version": "9.5.0",
