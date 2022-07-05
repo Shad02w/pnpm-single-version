@@ -1,0 +1,30 @@
+name: 'Run Test'
+
+on:
+    push:
+        branches:
+            - 'main'
+jobs:
+    test:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+
+            - name: Setup PNPM
+              uses: pnpm/action-setup@v2.2.2
+              with:
+                  version: latest
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '16'
+                  check-latest: true
+                  cache: 'pnpm'
+
+            - name: Install Dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Test
+              run: pnpm test
