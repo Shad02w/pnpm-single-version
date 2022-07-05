@@ -19,7 +19,10 @@ Add following options to `package.json` in project root
     "include": [
         // Place all the single version dependencies here
         "@babel/core",
-        "esbuild"
+        "esbuild",
+        // glob is also supported
+        "eslint-plugin-*",
+        "*-plugin",
     ]
 }
 ```

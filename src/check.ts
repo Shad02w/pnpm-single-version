@@ -4,6 +4,7 @@ import { pipe } from './util/pipe'
 import { createErrorMessage, logErrorMessage } from './error-message'
 import { ArrayValueMapHelper } from './util/array-value-map-Helper'
 import { LockfilePackagesMissingError } from './error'
+import { globUtil } from './util/globUtil'
 import type { CheckerOptions, LoggerType, PackageInfo } from './type'
 import type { Lockfile } from '@pnpm/lockfile-utils'
 
@@ -23,13 +24,13 @@ export const filterNonSingleVersionDependencies = (
 
 const filterSnapshotNeededForChecking =
     (snapshots: PackageSnapshots) =>
-    (depsForChecking: string[]): Map<string, PackageInfo[]> => {
-        // const depsList = new Set(depsForChecking)
+    (depsPattern: string[]): Map<string, PackageInfo[]> => {
+        const matcher = globUtil.toRegex(depsPattern)
         const packageInfos = ArrayValueMapHelper.create<PackageInfo>()
 
         for (const [path, snapshot] of Object.entries(snapshots)) {
             const nameVersionInfo: PackageInfo = nameVerFromPkgSnapshot(path, snapshot)
-            if (depsList.has(nameVersionInfo.name)) {
+            if (matcher.test(path)) {
                 ArrayValueMapHelper.add(packageInfos, nameVersionInfo.name, nameVersionInfo)
             }
         }
