@@ -43,12 +43,17 @@ pnpm provide a way to hook directly into installation process using `.pnpmfile.c
 2. Added following code to your `.pnpmfile.cjs` 
    
    ```js
-   const {checkSingleVersion} = require('pnpm-single-version');
-   
    module.exports = {
        hooks: {
-            afterAllResolved: checkSingleVersion  
-       }
+           afterAllResolved: (() => {
+               try {
+                   require.resolve("pnpm-single-version");
+                   return require("pnpm-single-version").checkSingleVersion;
+               } catch {
+                   return undefined;
+               }
+           })(),
+       },
    }
    ```
 
