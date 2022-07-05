@@ -1,10 +1,11 @@
+import glob from 'glob'
 import { nameVerFromPkgSnapshot, PackageSnapshots } from '@pnpm/lockfile-utils'
 import { pipe } from './util/pipe'
 import { createErrorMessage, logErrorMessage } from './error-message'
 import { ArrayValueMapHelper } from './util/array-value-map-Helper'
+import { LockfilePackagesMissingError } from './error'
 import type { CheckerOptions, LoggerType, PackageInfo } from './type'
 import type { Lockfile } from '@pnpm/lockfile-utils'
-import { LockfilePackagesMissingError } from './error'
 
 export const filterNonSingleVersionDependencies = (
     packageInfoMap: Map<string, PackageInfo[]>
@@ -20,10 +21,10 @@ export const filterNonSingleVersionDependencies = (
     return nonSingleVersionPackageInfo
 }
 
-const filterSnapShotNeededForChecking =
+const filterSnapshotNeededForChecking =
     (snapshots: PackageSnapshots) =>
     (depsForChecking: string[]): Map<string, PackageInfo[]> => {
-        const depsList = new Set(depsForChecking)
+        // const depsList = new Set(depsForChecking)
         const packageInfos = ArrayValueMapHelper.create<PackageInfo>()
 
         for (const [path, snapshot] of Object.entries(snapshots)) {
@@ -44,7 +45,7 @@ export const check = (lockfile: Lockfile, options: CheckerOptions, logger: Logge
     logger.message('Verify single version dependencies...')
 
     return pipe(
-        filterSnapShotNeededForChecking(lockfile.packages),
+        filterSnapshotNeededForChecking(lockfile.packages),
         filterNonSingleVersionDependencies,
         createErrorMessage,
         logErrorMessage(logger)

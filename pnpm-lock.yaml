@@ -11,7 +11,9 @@ specifiers:
   '@swc/cli': 0.1.57
   '@swc/core': 1.2.208
   '@types/fs-extra': 9.0.13
+  '@types/glob': 7.2.0
   '@types/jest': 28.1.4
+  '@types/minimatch': 3.0.5
   '@types/node': 18.0.0
   bole: 4.0.0
   chalk: 4.1.2
@@ -21,6 +23,7 @@ specifiers:
   fs-extra: 10.1.0
   husky: ^8.0.0
   jest: 28.1.2
+  minimatch: 5.1.0
   prettier: 2.7.1
   standard-version: 9.5.0
   ts-jest: 28.0.5
@@ -35,6 +38,7 @@ dependencies:
   bole: 4.0.0
   chalk: 4.1.2
   find-up: 5.0.0
+  minimatch: 5.1.0
 
 devDependencies:
   '@commitlint/cli': 17.0.3_@swc+core@1.2.208
@@ -43,7 +47,9 @@ devDependencies:
   '@swc/cli': 0.1.57_@swc+core@1.2.208
   '@swc/core': 1.2.208
   '@types/fs-extra': 9.0.13
+  '@types/glob': 7.2.0
   '@types/jest': 28.1.4
+  '@types/minimatch': 3.0.5
   '@types/node': 18.0.0
   commitizen: 4.2.4_@swc+core@1.2.208
   cz-conventional-changelog: 3.3.0_@swc+core@1.2.208
@@ -1179,6 +1185,13 @@ packages:
       '@types/node': 18.0.0
     dev: true
 
+  /@types/glob/7.2.0:
+    resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
+    dependencies:
+      '@types/minimatch': 3.0.5
+      '@types/node': 18.0.0
+    dev: true
+
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
@@ -1206,6 +1219,10 @@ packages:
     dependencies:
       jest-matcher-utils: 28.1.1
       pretty-format: 28.1.1
+    dev: true
+
+  /@types/minimatch/3.0.5:
+    resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: true
 
   /@types/minimist/1.2.2:
@@ -1459,6 +1476,12 @@ packages:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
+
+  /brace-expansion/2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
+    dev: false
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
@@ -3303,6 +3326,13 @@ packages:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
+
+  /minimatch/5.1.0:
+    resolution: {integrity: sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: false
 
   /minimist-options/4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
