@@ -63,3 +63,7 @@ pnpm provide a way to hook directly into installation process using `.pnpmfile.c
 So now when you call `pnpm install` and `pnpm update`, checking is going to be involved automatically only when you have dependenices changes.
 
 More about `.pnpmfile.cjs` at https://pnpm.io/pnpmfile
+
+#### Known Caveats
+
+Hook method is not working before `node_modules` are installed, so you may need to manually run `pnpm-single-version` after first `pnpm install`.
