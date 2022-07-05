@@ -1,4 +1,3 @@
-import glob from 'glob'
 import { nameVerFromPkgSnapshot, PackageSnapshots } from '@pnpm/lockfile-utils'
 import { pipe } from './util/pipe'
 import { createErrorMessage, logErrorMessage } from './error-message'
