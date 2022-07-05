@@ -1,4 +1,4 @@
-import { globUtil, toRegex } from '../src/util/globUtil'
+import { globUtil } from '../src/util/globUtil'
 
 describe('globUtil testing', () => {
     test('isMatched', () => {
@@ -11,12 +11,15 @@ describe('globUtil testing', () => {
         expect(globUtil.isMatch('react', ['react', '!react'])).toBeTruthy()
         expect(globUtil.isMatch('react', ['!(react)', 'react'])).toBeTruthy()
         expect(globUtil.isMatch('react', ['re*/'])).toBeFalsy()
+
+        expect(globUtil.isMatch('@babel/core', ['@@@@@/*'])).toBeFalsy()
+        expect(globUtil.isMatch('@babel/core', ['@+&^1.)13##$$/*'])).toBeFalsy()
     })
 
     test('toRegex', () => {
-        expect(toRegex(['react', 'eslint-plugin-*']).test('react')).toBeTruthy()
-        expect(toRegex(['react', 'eslint-plugin-*']).test('eslint-plugin-imports')).toBeTruthy()
-        expect(toRegex(['react', 'eslint-plugin-*']).test('abc')).toBeFalsy()
+        expect(globUtil.toRegex(['react', 'eslint-plugin-*']).test('react')).toBeTruthy()
+        expect(globUtil.toRegex(['react', 'eslint-plugin-*']).test('eslint-plugin-imports')).toBeTruthy()
+        expect(globUtil.toRegex(['react', 'eslint-plugin-*']).test('abc')).toBeFalsy()
         expect(globUtil.toRegex(['react', 'eslint-plugin-+(import|game)']).test('eslint-plugin-import')).toBeTruthy()
         expect(globUtil.toRegex(['react', 'eslint-plugin-!(import|game)']).test('eslint-plugin-import')).toBeFalsy()
         expect(globUtil.toRegex(['@babel/*']).test('@babel/core')).toBeTruthy()

@@ -9,7 +9,7 @@ function isMatch(target: string, patterns: string[]): boolean {
     return matched
 }
 
-export function toRegex(patterns: string[]): RegExp {
+function toRegex(patterns: string[]): RegExp {
     return new RegExp(patterns.map(_ => minimatch.makeRe(_).source).join('|'))
 }
 
