@@ -1,10 +1,10 @@
 import { nameVerFromPkgSnapshot, PackageSnapshots } from '@pnpm/lockfile-utils'
-import { pipe } from './util/pipe'
+import { pipe } from '../util/pipe'
+import { ArrayValueMapHelper } from '../util/array-value-map-Helper'
+import { LockfilePackagesMissingError } from '../error'
+import { globUtil } from '../util/glob-util'
 import { createErrorMessage, logErrorMessage } from './error-message'
-import { ArrayValueMapHelper } from './util/array-value-map-Helper'
-import { LockfilePackagesMissingError } from './error'
-import { globUtil } from './util/globUtil'
-import type { CheckerOptions, LoggerType, PackageInfo } from './type'
+import type { CheckerOptions, LoggerType, PackageInfo } from '../type'
 import type { Lockfile } from '@pnpm/lockfile-utils'
 
 export const filterNonSingleVersionDependencies = (

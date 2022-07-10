@@ -1,9 +1,9 @@
 import { Lockfile } from '@pnpm/lockfile-file'
-import { check } from './check'
-import { parseOptions } from './parse-option'
-import { findProjectRoot } from './find-project-root'
-import { pnpmLogger } from './util/pnpm-logger'
-import { logInstallationInterruptedMessage } from './error-message'
+import { check } from '../checker/check'
+import { parseOptions } from '../parser-option/parse-option'
+import { findProjectRoot } from '../parser-option/find-project-root'
+import { pnpmLogger } from '../util/pnpm-logger'
+import { logInstallationInterruptedMessage } from '../checker/error-message'
 import logger from '@pnpm/logger'
 
 export const hook = async (lockfile: Lockfile) => {

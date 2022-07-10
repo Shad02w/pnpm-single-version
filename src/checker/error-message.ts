@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { LoggerType, PackageInfo } from './type'
+import { LoggerType, PackageInfo } from '../type'
 
 const Emoji = {
     sad: '😔',

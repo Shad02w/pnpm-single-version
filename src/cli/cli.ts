@@ -1,8 +1,8 @@
 import { readWantedLockfile } from '@pnpm/lockfile-file'
-import { Logger } from './util/logger'
-import { check } from './check'
-import { parseOptions } from './parse-option'
-import { findProjectRoot } from './find-project-root'
+import { Logger } from '../util/logger'
+import { check } from '../checker/check'
+import { parseOptions } from '../parser-option/parse-option'
+import { findProjectRoot } from '../parser-option/find-project-root'
 import chalk from 'chalk'
 
 const cli = async () => {

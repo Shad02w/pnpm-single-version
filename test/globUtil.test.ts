@@ -1,4 +1,4 @@
-import { globUtil } from '../src/util/globUtil'
+import { globUtil } from '../src/util/glob-util'
 
 describe('globUtil testing', () => {
     test('isMatched', () => {

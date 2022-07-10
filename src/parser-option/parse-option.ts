@@ -1,9 +1,9 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { TextDecoder } from 'util'
-import { PACKAGE_JSON_OPTIONS_KEY } from './constant'
-import { OptionNotFoundError, OptionSyntaxError } from './error'
-import type { CheckerOptions } from './type'
+import { PACKAGE_JSON_OPTIONS_KEY } from '../constant'
+import { OptionNotFoundError, OptionSyntaxError } from '../error'
+import type { CheckerOptions } from '../type'
 
 const validateOptions = (options: any): CheckerOptions => {
     if (!options) {
