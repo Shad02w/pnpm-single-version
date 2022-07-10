@@ -3,6 +3,9 @@ import { realpath } from 'fs/promises'
 import findUp from 'find-up'
 import { ProjectRootError } from '../error'
 
+/**
+ * Can find the root path of the package and monorepo
+ */
 export const findProjectRoot = async (): Promise<string> => {
     const projectRoot =
         (await findWorkspaceDir(process.cwd())) ??
