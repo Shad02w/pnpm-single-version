@@ -20,20 +20,28 @@ export const build = async () => {
     await fs.emptyDir(outputPath)
     console.log('> Clean output path')
 
-    await spawnSync('swc', [sourceFilePath, '-d', outputPath, '--config-file', swcConfigFilePath], spawnOptions)
+    await spawnSync(
+        'swc',
+        [sourceFilePath, '-d', outputPath, '--config-file', swcConfigFilePath],
+        spawnOptions
+    )
     console.log('> Transpiled')
 
-    await spawnSync('tsc', ['-P', tsconfigFilePath, '--emitDeclarationOnly'], spawnOptions)
+    await spawnSync(
+        'tsc',
+        ['-P', tsconfigFilePath, '--emitDeclarationOnly'],
+        spawnOptions
+    )
     console.log('> d.ts generated')
 
-    await fs.copy(packageJSONFilePath, path.join(outputPath, 'package.json'))
-    console.log('> Copied package.json')
-
-    await fs.copy(readMeFilePath, path.join(outputPath, 'README.md'))
-    console.log('> Copied README.md')
-
-    await fs.copy(licenseFilePath, path.join(outputPath, 'LICENSE'))
-    console.log('> Copied LICENSE')
+    // await fs.copy(packageJSONFilePath, path.join(outputPath, 'package.json'))
+    // console.log('> Copied package.json')
+    //
+    // await fs.copy(readMeFilePath, path.join(outputPath, 'README.md'))
+    // console.log('> Copied README.md')
+    //
+    // await fs.copy(licenseFilePath, path.join(outputPath, 'LICENSE'))
+    // console.log('> Copied LICENSE')
 }
 
 build()

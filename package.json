@@ -2,13 +2,14 @@
     "name": "pnpm-single-version",
     "version": "1.2.1",
     "description": "Ensure single version dependencies of pnpm workspace",
-    "main": "./index.js",
-    "types": "./index.d.ts",
-    "publishConfig": {
-        "directory": "dist"
-    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
     "bin": {
-        "pnpm-single-version": "./bin.js"
+        "pnpm-single-version": "./dist/bin.js"
     },
     "scripts": {
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",

@@ -3,6 +3,7 @@
     "compilerOptions": {
         "allowJs": true,
         "emitDeclarationOnly": true,
+        "declarationMap": true,
         "rootDir": "../src",
         "outDir": "../dist",
         "types": ["node"]
