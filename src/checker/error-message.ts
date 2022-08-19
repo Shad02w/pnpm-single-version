@@ -12,17 +12,15 @@ const headerMessage = (num: number) => `${Emoji.cross} Found ${chalk.redBright(n
 const listVersionMessage = (name: string, infos: PackageInfo[]): string =>
     `
     - ${chalk.blueBright(name)} has ${chalk.redBright(infos.length)} distinct versions 
-      ${infos.map(_ => _.version).join(', ')}
+      ${infos.map((_) => _.version).join(', ')}
 `
 
 const hintMessage = `
 Well, here is what you can try to do:
 Run ${chalk.blueBright(
     `$ pnpm why <dependency> -r `
-)} on project root to figure out which workspaces have conflicted version. 
-If the output is too long, try to redirect the it to a single file, like ${chalk.blueBright(
-    `$ pnpm why <dependency> -r > example.txt`
-)}
+)} on project root to figure out the dependencies that contain conflicted version. 
+If the output is too long, try to redirect output, like ${chalk.blueBright(`$ pnpm why <dependency> -r > example.txt`)}
 more about ${chalk.blueBright(`$ pnpm why`)} command, check out ${chalk.greenBright('https://pnpm.io/cli/why')} 
 `
 
