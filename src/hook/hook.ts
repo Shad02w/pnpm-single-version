@@ -1,5 +1,5 @@
 import { Lockfile } from '@pnpm/lockfile-file'
-import { check } from '../checker/check'
+import { check } from '../checker'
 import { parseOptions } from '../parser-option/parse-option'
 import { findProjectRoot } from '../parser-option/find-project-root'
 import { pnpmLogger } from '../util/pnpm-logger'

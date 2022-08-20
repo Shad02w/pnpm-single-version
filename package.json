@@ -9,7 +9,8 @@
         "src"
     ],
     "bin": {
-        "pnpm-single-version": "./dist/bin.js"
+        "pnpm-single-version": "./dist/command/index.js",
+        "psv": "./dist/command/index.js"
     },
     "scripts": {
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",

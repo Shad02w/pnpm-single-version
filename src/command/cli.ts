@@ -1,11 +1,11 @@
 import { readWantedLockfile } from '@pnpm/lockfile-file'
 import { Logger } from '../util/logger'
-import { check } from '../checker/check'
+import { check } from '../checker'
 import { parseOptions } from '../parser-option/parse-option'
 import { findProjectRoot } from '../parser-option/find-project-root'
 import chalk from 'chalk'
 
-const cli = async () => {
+export const run = async () => {
     try {
         const projectRoot = await findProjectRoot()
         const options = await parseOptions(projectRoot)
@@ -26,5 +26,3 @@ const cli = async () => {
         }
     }
 }
-
-cli()
