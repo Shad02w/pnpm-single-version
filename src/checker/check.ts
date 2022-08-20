@@ -52,5 +52,5 @@ export const check = (lockfile: Lockfile, options: CheckerOptions, logger: Logge
         filterNonSingleVersionDependencies,
         createErrorMessage,
         logErrorMessage(logger)
-    )(options.include)
+    )(options.includes)
 }

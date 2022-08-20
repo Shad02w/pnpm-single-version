@@ -1,7 +1,7 @@
 import { nameVerFromPkgSnapshot } from '@pnpm/lockfile-utils'
 
 export interface CheckerOptions {
-    include: string[]
+    includes: string[]
 }
 
 export interface LoggerType {

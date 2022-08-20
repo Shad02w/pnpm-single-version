@@ -16,7 +16,7 @@ Add following options to `package.json` in project root
 
 ```json5
 "pnpmSingleVersion": {
-    "include": [
+    "includes": [
         // Place all the single version dependencies here
         "@babel/core",
         "esbuild",
@@ -39,24 +39,24 @@ pnpm pnpm-single-version
 
 Apart from cli command, you also able to check single version of dependencies when `pnpm-lock.yaml` is resolved. This is much effective way than checking manually.
 
-pnpm provide a way to hook directly into installation process using `.pnpmfile.cjs`, by using `afterAllResolved` hook,  installation process can be interrupted when non-single version dependencies is detected. 
+pnpm provide a way to hook directly into installation process using `.pnpmfile.cjs`, by using `afterAllResolved` hook, installation process can be interrupted when non-single version dependencies is detected.
 
 1. First create a `.pnpmfile.cjs` in root directory of your monorepo if your dont have one.
 
-2. Added following code to your `.pnpmfile.cjs` 
+2. Added following code to your `.pnpmfile.cjs`
    
    ```js
    module.exports = {
        hooks: {
            afterAllResolved: (() => {
                try {
-                   require.resolve("pnpm-single-version");
-                   return require("pnpm-single-version").checkSingleVersion;
+                   require.resolve('pnpm-single-version')
+                   return require('pnpm-single-version').checkSingleVersion
                } catch {
-                   return undefined;
+                   return undefined
                }
-           })(),
-       },
+           })()
+       }
    }
    ```
 
