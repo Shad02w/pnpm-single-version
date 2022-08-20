@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.7](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.6...v1.2.7) (2022-08-20)
+
+
+### Bug Fixes
+
+* changed "include" to "includeds", but it still backward compatible ([1452acb](https://github.com/Shad02w/pnpm-single-version/commit/1452acb2c4f89ed59c3146bac7a9084ff85a083e))
+
 ### [1.2.6](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.5...v1.2.6) (2022-08-19)
 
 ### [1.2.5](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.4...v1.2.5) (2022-08-19)
