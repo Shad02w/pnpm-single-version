@@ -6,7 +6,8 @@
         "declarationMap": true,
         "rootDir": "../src",
         "outDir": "../dist",
-        "types": ["node"]
+        "types": ["node"],
+        "resolveJsonModule": true
     },
     "include": ["../src"]
 }
