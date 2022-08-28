@@ -5,7 +5,7 @@ import { parseOptions } from '../parser-option/parse-option'
 import { findProjectRoot } from '../parser-option/find-project-root'
 import chalk from 'chalk'
 
-export const run = async () => {
+export const checkDeps = async () => {
     try {
         const projectRoot = await findProjectRoot()
         const options = await parseOptions(projectRoot)

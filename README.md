@@ -35,35 +35,42 @@ You can `pnpm-single-version` in Terminal
 pnpm pnpm-single-version
 ```
 
-### Another way
+or 
 
-Apart from cli command, you also able to check single version of dependencies when `pnpm-lock.yaml` is resolved. This is much effective way than checking manually.
+```bash
+pnpm psv
+```
 
-pnpm provide a way to hook directly into installation process using `.pnpmfile.cjs`, by using `afterAllResolved` hook, installation process can be interrupted when non-single version dependencies is detected.
+### Automatic resolve (Recommanded)
 
-1. First create a `.pnpmfile.cjs` in root directory of your monorepo if your dont have one.
+Apart from manual checking, checking can also be done when `pnpm-lock.yaml` is resolved, where pnpm detected dependencies changes running `pnpm install` , `pnpm update` and `pnpm removed`. This is much effective.
 
-2. Added following code to your `.pnpmfile.cjs`
+By using `afterAllResolved` hook in `.pnpmfile.cjs`,  installation process can be interrupted when non-single version dependencies is detected. 
+
+To setup it up,
+
+1. First, install checker via
+   
+   ```shell
+   pnpm pnpm-single-version install
+   ```
+   
+   this command will generate a checker file inside  `.psv` directory of the root directory of workspace.
+
+2. Then you should create a `.pnpmfile.cjs`  and add following code
    
    ```js
+   const hook = require('./.psv/hook')
+   
    module.exports = {
        hooks: {
-           afterAllResolved: (() => {
-               try {
-                   require.resolve('pnpm-single-version')
-                   return require('pnpm-single-version').checkSingleVersion
-               } catch {
-                   return undefined
-               }
-           })()
+           afterAllResolved: hook
        }
    }
    ```
 
-So now when you call `pnpm install` and `pnpm update`, checking is going to be involved automatically only when you have dependenices changes.
+Now, when you call `pnpm install` and `pnpm update`, checking is going to be involve automatically only when have dependenices changes.
+
+**PS: You may need to run `psv install` every time you update `pnpm-single-version`**
 
 More about `.pnpmfile.cjs` at https://pnpm.io/pnpmfile
-
-#### Known Caveats
-
-Hook method is not working before `node_modules` are installed, so you may need to manually run `pnpm-single-version` after first `pnpm install`.

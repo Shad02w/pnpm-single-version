@@ -1,6 +1,6 @@
 {
     "name": "pnpm-single-version",
-    "version": "1.2.7",
+    "version": "1.2.8-beta6",
     "description": "Ensure single version dependencies of pnpm workspace",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -17,8 +17,7 @@
         "build": "pnpm run --silent run-script ./script/build.ts",
         "prepublish": "pnpm run --silent run-script ./script/build.ts",
         "release": "standard-version",
-        "test": "jest -c ./config/jest.config.ts",
-        "prepare": "husky install"
+        "test": "jest -c ./config/jest.config.ts"
     },
     "keywords": [
         "pnpm",
@@ -34,14 +33,16 @@
     "author": "Alvis Tse",
     "license": "ISC",
     "dependencies": {
+        "@fig/complete-commander": "2.0.0",
         "@pnpm/find-workspace-dir": "4.0.2",
         "@pnpm/lockfile-file": "5.1.2",
         "@pnpm/lockfile-utils": "4.0.7",
         "@pnpm/logger": "4.0.0",
         "bole": "4.0.0",
         "chalk": "4.1.2",
-        "esbuild": "0.14.48",
+        "commander": "^9.4.0",
         "find-up": "5.0.0",
+        "fs-extra": "10.1.0",
         "minimatch": "5.1.0"
     },
     "devDependencies": {
@@ -56,7 +57,7 @@
         "@types/node": "18.0.3",
         "commitizen": "4.2.4",
         "cz-conventional-changelog": "^3.3.0",
-        "fs-extra": "10.1.0",
+        "esbuild": "0.15.5",
         "husky": "^8.0.0",
         "jest": "28.1.2",
         "prettier": "2.7.1",
