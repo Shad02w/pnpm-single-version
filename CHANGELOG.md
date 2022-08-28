@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.7...v1.3.0) (2022-08-28)
+
+
+### Features
+
+* added install and check command ([f38f0cb](https://github.com/Shad02w/pnpm-single-version/commit/f38f0cb5ffd34315c4324508b44b2172d2667907))
+
+
+### Bug Fixes
+
+* find package.json root when it is not a monorepo ([0057fbb](https://github.com/Shad02w/pnpm-single-version/commit/0057fbb219c0871c837c83a17c3cb3182d0282cf))
+
 ### [1.2.7](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.6...v1.2.7) (2022-08-20)
 
 
