@@ -24,8 +24,11 @@ jobs:
                   check-latest: true
                   cache: 'pnpm'
 
+            - name: Remove node_modules
+              uses: rm -rf node_modules
+
             - name: Install Dependencies
-              run: pnpm install --no-frozen-lockfile
+              run: pnpm install
 
             - name: Test
               run: pnpm test
