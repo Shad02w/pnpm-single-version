@@ -4,11 +4,6 @@ on:
     push:
         branches:
             - 'release'
-    workflow_run:
-        workflows:
-            - 'Run Tests'
-        types:
-            - completed
 jobs:
     push-to-fig:
         runs-on: ubuntu-latest
@@ -29,7 +24,7 @@ jobs:
                   cache: 'pnpm'
 
             - name: Install Dependencies
-              run: pnpm install --frozen-lockfile
+              run: pnpm install
 
             - name: Output Fig Spec
               run: pnpm fig > spec.ts
