@@ -24,9 +24,6 @@ jobs:
                   check-latest: true
                   cache: 'pnpm'
 
-            - name: Remove node_modules
-              run: rm -rf node_modules
-
             - name: Install Dependencies
               run: pnpm install
 
