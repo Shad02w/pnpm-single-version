@@ -25,7 +25,7 @@ jobs:
                   cache: 'pnpm'
 
             - name: Remove node_modules
-              uses: rm -rf node_modules
+              run: rm -rf node_modules
 
             - name: Install Dependencies
               run: pnpm install
