@@ -17,7 +17,7 @@ specifiers:
   '@types/node': 18.0.3
   bole: 4.0.0
   chalk: 4.1.2
-  commander: ^9.4.0
+  commander: 9.4.0
   commitizen: 4.2.4
   cz-conventional-changelog: ^3.3.0
   esbuild: 0.15.5
