@@ -1,13 +1,18 @@
-name: Run tests
+name: Publish Fig Spec
 
 on:
     push:
         branches:
-            - 'main'
             - 'release'
+    workflow_run:
+        workflows:
+            - 'Run Tests'
+        types:
+            - completed
 jobs:
-    test:
+    push-to-fig:
         runs-on: ubuntu-latest
+        needs: test
         steps:
             - name: Checkout Code
               uses: actions/checkout@v3
@@ -27,5 +32,8 @@ jobs:
             - name: Install Dependencies
               run: pnpm install --frozen-lockfile
 
-            - name: Test
-              run: pnpm test
+            - name: Output Fig Spec
+              run: pnpm fig > spec.ts
+
+            - name: Publish Fig Spec
+              run: npx @fig/publish-spec --spec-path ./spec.ts
