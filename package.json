@@ -16,6 +16,7 @@
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
         "prepublish": "pnpm run --silent run-script ./script/build.ts",
+        "fig": "NODE_ENV=development node ./dist/command/index.js generate-fig-spec",
         "release": "standard-version",
         "test": "jest -c ./config/jest.config.ts"
     },
