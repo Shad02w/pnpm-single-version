@@ -26,6 +26,9 @@ jobs:
             - name: Install Dependencies
               run: pnpm install
 
+            - name: Build
+              run: pnpm build
+
             - name: Output Fig Spec
               run: pnpm fig > spec.ts
 

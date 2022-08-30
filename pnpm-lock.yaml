@@ -19,11 +19,11 @@ specifiers:
   chalk: 4.1.2
   commander: 9.4.0
   commitizen: 4.2.5
-  cz-conventional-changelog: ^3.3.0
+  cz-conventional-changelog: 3.3.0
   esbuild: 0.15.6
   find-up: 5.0.0
   fs-extra: 10.1.0
-  husky: ^8.0.1
+  husky: 8.0.1
   jest: 29.0.1
   minimatch: 5.1.0
   prettier: 2.7.1
