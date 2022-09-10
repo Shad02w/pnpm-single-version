@@ -26,7 +26,7 @@ specifiers:
   husky: 8.0.1
   jest: 28.1.3
   minimatch: 5.1.0
-  pnpm-single-version: 1.3.5-beta.3
+  pnpm-single-version: 1.3.5-beta.4
   prettier: 2.7.1
   standard-version: 9.5.0
   ts-jest: 28.0.8
@@ -61,7 +61,7 @@ devDependencies:
   esbuild: 0.15.6
   husky: 8.0.1
   jest: 28.1.3_gsb7asu77en4txj3es3i65pxci
-  pnpm-single-version: 1.3.5-beta.3
+  pnpm-single-version: 1.3.5-beta.4
   prettier: 2.7.1
   standard-version: 9.5.0
   ts-jest: 28.0.8_pintr3udeepbr4ikxitjqff53m
@@ -3860,8 +3860,8 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /pnpm-single-version/1.3.5-beta.3:
-    resolution: {integrity: sha512-nGz714qjDrm7SxjNY9m1kWy0rB6oP3W960OWpL7eLFAmDQCldofNu6a0DiwWNf8huXcKBGf2kSOcFKTDfX+i1Q==}
+  /pnpm-single-version/1.3.5-beta.4:
+    resolution: {integrity: sha512-r6Wv6dpMxes3wGT5PMNFZmZyxIeVA8vSdjW4GY7EpZRCJ7+OUIfXT3p7/8gnG7aM6ioIZvTD/MGGZz3UH63XZg==}
     hasBin: true
     requiresBuild: true
     dependencies:
