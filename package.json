@@ -19,7 +19,7 @@
         "fig": "NODE_ENV=development node ./dist/command/index.js generate-fig-spec",
         "release": "standard-version",
         "test": "jest -c ./config/jest.config.ts",
-        "prepare": "psv install"
+        "postinstall": "psv install"
     },
     "keywords": [
         "pnpm",
