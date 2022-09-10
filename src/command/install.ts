@@ -22,8 +22,6 @@ export const install = async (projectRoot: string) => {
     await fs.mkdir(psvDotFolderPath)
     await fs.copyFile(path.join(__dirname, '../hookBundle.js'), path.join(psvDotFolderPath, 'hook.js'))
 
-    console.log(psvDotFolderPath, path.join(psvDotFolderPath, 'hook.js'))
-
     Logger.message('installed .psv')
 
     // currently not needed
