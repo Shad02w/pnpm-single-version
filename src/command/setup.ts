@@ -1,4 +1,3 @@
-import { addCompletionSpecCommand } from '@fig/complete-commander'
 import { Command } from 'commander'
 import { checkDeps } from './checkDeps'
 import { install } from './install'
@@ -12,7 +11,7 @@ program.command('check', { isDefault: true }).description('Verify single version
 program.command('install').description('Install the checker file into .psv').action(install)
 
 if (process.env.NODE_ENV === 'development') {
-    addCompletionSpecCommand(program)
+    require('@fig/complete-commander').addCompletionSpecCommand(program)
 }
 
 program.parse()
