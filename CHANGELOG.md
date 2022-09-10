@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.0...v1.3.1) (2022-09-10)
+
+
+### Bug Fixes
+
+* removed needs from fig actions ([24ed324](https://github.com/Shad02w/pnpm-single-version/commit/24ed32483211ccb8f9a50ebe959bcc49a7193f8f))
+
 ## [1.3.0](https://github.com/Shad02w/pnpm-single-version/compare/v1.2.7...v1.3.0) (2022-08-28)
 
 
