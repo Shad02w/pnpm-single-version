@@ -18,7 +18,7 @@ const buildHookBundle = async () => {
     await esbuild.build({
         entryPoints: [path.join(__dirname, '../src/command/pnpmfile/hook.ts')],
         bundle: true,
-        outfile: path.join(outputPath, './hookbundle.js'),
+        outfile: path.join(outputPath, './hook-bundle.js'),
         platform: 'node',
         minify: true
     })

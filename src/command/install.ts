@@ -20,15 +20,7 @@ export const install = async (projectRoot: string) => {
     }
 
     await fs.mkdir(psvDotFolderPath)
-    await fs.copyFile(path.join(__dirname, '../hookBundle.js'), path.join(psvDotFolderPath, 'hook.js'))
+    await fs.copyFile(path.join(__dirname, '../hook-bundle.js'), path.join(psvDotFolderPath, 'hook.js'))
 
     Logger.message('installed .psv')
-
-    // currently not needed
-    // const pnpmfilePath = path.join(root, '.pnpmfile.cjs')
-    // if (await isExist(pnpmfilePath)) {
-    //     await fs.move(pnpmfilePath, pnpmfilePath + '.bak')
-    // }
-
-    // fs.copyFile(path.join(__dirname, './pnpmfile/.pnpmfile.cjs'), pnpmfilePath)
 }
