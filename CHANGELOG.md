@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.4...v1.3.5) (2022-09-10)
+
+
+### Bug Fixes
+
+* rename hook bundle file to hook-bundle.js ([99486b3](https://github.com/Shad02w/pnpm-single-version/commit/99486b34568f4d42d06ec8d16d8dda9297a6598d))
+
 ### [1.3.4](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.3...v1.3.4) (2022-09-10)
 
 ### [1.3.3](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.2...v1.3.3) (2022-09-10)
