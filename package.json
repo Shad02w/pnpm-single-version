@@ -35,7 +35,6 @@
     "author": "Alvis Tse",
     "license": "ISC",
     "dependencies": {
-        "@fig/complete-commander": "2.0.0",
         "@pnpm/find-workspace-dir": "4.0.2",
         "@pnpm/lockfile-file": "5.3.3",
         "@pnpm/lockfile-utils": "4.2.4",
@@ -48,6 +47,7 @@
         "minimatch": "5.1.0"
     },
     "devDependencies": {
+        "@fig/complete-commander": "2.0.0",
         "@commitlint/cli": "17.1.2",
         "@commitlint/config-conventional": "17.1.0",
         "@jest/types": "28.1.3",
