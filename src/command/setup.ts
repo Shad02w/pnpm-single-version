@@ -10,8 +10,4 @@ program.name('pnpm-single-version').alias('psv').version(packageJSON.version)
 program.command('check', { isDefault: true }).description('Verify single version dependencies').action(checkDeps)
 program.command('install').description('Install the checker file into .psv').action(install)
 
-if (process.env.NODE_ENV === 'development') {
-    require('@fig/complete-commander').addCompletionSpecCommand(program)
-}
-
 program.parse()

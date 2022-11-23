@@ -16,10 +16,8 @@
         "run-script": "TS_NODE_PROJECT=./config/tsconfig.script.json node -r ts-node/register",
         "build": "pnpm run --silent run-script ./script/build.ts",
         "prepublish": "pnpm run --silent run-script ./script/build.ts",
-        "fig": "NODE_ENV=development node ./dist/command/index.js generate-fig-spec",
         "release": "standard-version",
-        "test": "jest -c ./config/jest.config.ts",
-        "postinstall": "psv install"
+        "test": "jest -c ./config/jest.config.ts"
     },
     "keywords": [
         "pnpm",
@@ -50,7 +48,6 @@
     "devDependencies": {
         "@commitlint/cli": "17.1.2",
         "@commitlint/config-conventional": "17.1.0",
-        "@fig/complete-commander": "2.0.0",
         "@jest/types": "28.1.3",
         "@swc/cli": "0.1.57",
         "@swc/core": "1.2.244",
