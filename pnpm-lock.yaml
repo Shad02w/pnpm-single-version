@@ -11,6 +11,7 @@ specifiers:
   '@swc/cli': 0.1.57
   '@swc/core': 1.2.244
   '@types/fs-extra': 9.0.13
+  '@types/is-ci': ^3.0.0
   '@types/jest': 28.1.3
   '@types/minimatch': 5.1.1
   '@types/node': 18.7.14
@@ -23,6 +24,7 @@ specifiers:
   find-up: 5.0.0
   fs-extra: 10.1.0
   husky: 8.0.1
+  is-ci: ^3.0.1
   jest: 28.1.3
   minimatch: 5.1.0
   pnpm-single-version: 1.3.5-beta.5
@@ -42,6 +44,7 @@ dependencies:
   commander: 9.4.0
   find-up: 5.0.0
   fs-extra: 10.1.0
+  is-ci: 3.0.1
   minimatch: 5.1.0
 
 devDependencies:
@@ -51,6 +54,7 @@ devDependencies:
   '@swc/cli': 0.1.57_@swc+core@1.2.244
   '@swc/core': 1.2.244
   '@types/fs-extra': 9.0.13
+  '@types/is-ci': 3.0.0
   '@types/jest': 28.1.3
   '@types/minimatch': 5.1.1
   '@types/node': 18.7.14
@@ -1227,6 +1231,12 @@ packages:
       '@types/node': 18.7.14
     dev: true
 
+  /@types/is-ci/3.0.0:
+    resolution: {integrity: sha512-Q0Op0hdWbYd1iahB+IFNQcWXFq4O0Q5MwQP7uN0souuQ4rPg1vEYcnIOfr1gY+M+6rc8FGoRaBO1mOOvL29sEQ==}
+    dependencies:
+      ci-info: 3.3.2
+    dev: true
+
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
@@ -1614,7 +1624,6 @@ packages:
 
   /ci-info/3.3.2:
     resolution: {integrity: sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==}
-    dev: true
 
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
@@ -2793,6 +2802,13 @@ packages:
   /is-arrayish/0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
     dev: true
+
+  /is-ci/3.0.1:
+    resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
+    hasBin: true
+    dependencies:
+      ci-info: 3.3.2
+    dev: false
 
   /is-core-module/2.10.0:
     resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}

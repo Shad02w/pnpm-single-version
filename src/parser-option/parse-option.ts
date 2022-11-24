@@ -6,16 +6,18 @@ import { OptionNotFoundError, OptionSyntaxError } from '../error'
 import type { CheckerOptions } from '../type'
 
 const validateOptions = (options: any): CheckerOptions => {
-    if (!options) {
+    if (!options || typeof options !== 'object') {
         throw new OptionNotFoundError()
     }
 
-    if (!Array.isArray(options?.includes) && !Array.isArray(options?.include)) {
-        throw new OptionSyntaxError()
+    const o = options as Partial<CheckerOptions>
+
+    if (!Array.isArray(o?.includes)) {
+        throw new OptionSyntaxError('Please make sure you have included single version dependencies in option.')
     }
 
-    if (options.include) {
-        options.includes = options.include
+    if (o?.failOnCI !== undefined && typeof o.failOnCI !== 'boolean') {
+        throw new OptionSyntaxError('Please use boolean for failedOnCI option')
     }
 
     return options as CheckerOptions
@@ -25,5 +27,12 @@ export const parseOptions = async (projectRoot: string): Promise<CheckerOptions>
     const packageJsonfile = await fs.readFile(path.join(projectRoot, 'package.json'))
     // @see https://github.dev/sindresorhus/load-json-file
     const packageJSON = JSON.parse(new TextDecoder().decode(packageJsonfile))
-    return validateOptions((packageJSON as any)?.[PACKAGE_JSON_OPTIONS_KEY])
+
+    const options = validateOptions((packageJSON as any)?.[PACKAGE_JSON_OPTIONS_KEY])
+
+    if (options.failOnCI === undefined) {
+        options.failOnCI = true
+    }
+
+    return options
 }

@@ -27,8 +27,8 @@ export class OptionNotFoundError extends Error {
 }
 
 export class OptionSyntaxError extends Error {
-    constructor() {
-        super(`Invalid option, please make sure you have included single version dependencies.`)
+    constructor(message: string) {
+        super(`Invalid option: ${message}`)
         this.name = 'OptionSyntaxError'
     }
 }
