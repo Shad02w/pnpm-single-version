@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.5...v1.4.0) (2022-11-24)
+
+
+### Features
+
+* able to exit only on CI when checker failed ([149fdce](https://github.com/Shad02w/pnpm-single-version/commit/149fdce45f39f113250f7f5a2fb030c05c96f5e9))
+
 ### [1.3.5](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.4...v1.3.5) (2022-09-10)
 
 
