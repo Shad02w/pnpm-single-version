@@ -1,10 +1,11 @@
 import { readWantedLockfile } from '@pnpm/lockfile-file'
 import { Logger } from '../util/logger'
 import isCI from 'is-ci'
-import { check } from '../checker'
+import { checker } from '../checker'
 import { parseOptions } from '../parser-option/parse-option'
 import { findProjectRoot } from '../parser-option/find-project-root'
 import chalk from 'chalk'
+import { logInstallationInterruptedMessage } from '../checker/error-message'
 
 export const checkDeps = async () => {
     try {
@@ -19,13 +20,12 @@ export const checkDeps = async () => {
             )
             process.exit(1)
         }
-        const haveError = check(lockfile, options, Logger)
-        if (haveError && options.failOnCI && isCI) {
+        if (checker(lockfile, options, Logger) && options.failOnCI && isCI) {
+            logInstallationInterruptedMessage(Logger)
             process.exit(1)
         }
     } catch (error) {
-        if (error instanceof Error) {
-            Logger.error(error)
-        }
+        error instanceof Error ? Logger.error(error) : console.error('Unexpected error', error)
+        process.exit(1)
     }
 }

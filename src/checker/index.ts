@@ -7,7 +7,6 @@ import { createErrorMessage, logErrorMessage } from './error-message'
 import type { CheckerOptions, LoggerType, PackageInfo } from '../type'
 import type { Lockfile } from '@pnpm/lockfile-utils'
 import logger from '@pnpm/logger'
-import { pnpmLogger } from '../util/pnpm-logger'
 import { Logger } from '../util/logger'
 
 export const filterNonSingleVersionDependencies = (
@@ -40,7 +39,7 @@ const filterSnapshotNeededForChecking =
         return packageInfos
     }
 
-export const check = (lockfile: Lockfile, options: CheckerOptions, logger: LoggerType) => {
+export const checker = (lockfile: Lockfile, options: CheckerOptions, logger: LoggerType) => {
     if (!lockfile.packages) {
         throw new LockfilePackagesMissingError()
     }
