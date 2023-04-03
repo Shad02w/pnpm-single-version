@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/Shad02w/pnpm-single-version/compare/v1.4.0...v1.4.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* downgrade find-up version to 5.0.0 ([9323373](https://github.com/Shad02w/pnpm-single-version/commit/9323373e08a8da72b0e4bb9513900f6dd121d98e))
+
 ## [1.4.0](https://github.com/Shad02w/pnpm-single-version/compare/v1.3.5...v1.4.0) (2022-11-24)
 
 

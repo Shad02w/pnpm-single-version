@@ -1,6 +1,6 @@
 {
     "name": "pnpm-single-version",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Ensure single version dependencies of pnpm workspace",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
