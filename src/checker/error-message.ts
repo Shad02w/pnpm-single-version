@@ -12,7 +12,7 @@ const headerMessage = (num: number) => `${Emoji.cross} Found ${chalk.redBright(n
 const listVersionMessage = (name: string, infos: PackageInfo[]): string =>
     `
     - ${chalk.blueBright(name)} has ${chalk.redBright(infos.length)} distinct versions 
-      ${infos.map((_) => _.version).join(', ')}
+      ${infos.map((_) => _.version + (_.peersSuffix ?? '')).join(', ')}
 `
 
 const hintMessage = `
