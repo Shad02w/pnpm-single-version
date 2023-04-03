@@ -41,7 +41,7 @@
         "bole": "*",
         "chalk": "4.1.2",
         "commander": "10.0.0",
-        "find-up": "6.3.0",
+        "find-up": "5.0.0",
         "fs-extra": "11.1.1",
         "is-ci": "^3.0.1",
         "minimatch": "8.0.2"
