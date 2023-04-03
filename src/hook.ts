@@ -4,7 +4,7 @@ import { parseOptions } from './parser-option/parse-option'
 import { findProjectRoot } from './parser-option/find-project-root'
 import { pnpmLogger } from './util/pnpm-logger'
 import { logInstallationInterruptedMessage } from './checker/error-message'
-import logger from '@pnpm/logger'
+import { logger } from '@pnpm/logger'
 
 export const hook = async (lockfile: Lockfile) => {
     try {
