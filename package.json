@@ -4,6 +4,10 @@
     "description": "Ensure single version dependencies of pnpm workspace",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Shad02w/pnpm-single-version.git"
+    },
     "files": [
         "dist",
         "src"
