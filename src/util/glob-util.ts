@@ -12,9 +12,9 @@ function isMatch(target: string, patterns: string[]): boolean {
 function toRegex(patterns: string[]): RegExp {
     return new RegExp(
         patterns
-            .map((_) => minimatch.makeRe(_))
+            .map(_ => minimatch.makeRe(_))
             .filter((_): _ is RegExp => _ !== false)
-            .map((_) => _.source)
+            .map(_ => _.source)
             .join('|')
     )
 }
