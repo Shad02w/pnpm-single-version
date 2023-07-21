@@ -2,7 +2,7 @@ import { Config } from '@jest/types'
 import * as path from 'path'
 import type { JestConfigWithTsJest } from 'ts-jest'
 
-const config: Config.InitialOptionsWithRootDir = {
+const config: JestConfigWithTsJest = {
     preset: 'ts-jest',
     rootDir: '../',
     testEnvironment: 'node',
